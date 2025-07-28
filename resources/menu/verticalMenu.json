@@ -10,31 +10,31 @@
       "menuHeader": "Academy"
     },
     {
-      "url": "/",
+      "url": "/admin/courses",
       "name": "Courses",
       "icon": "menu-icon tf-icons mdi mdi-school-outline",
       "slug": "courses"
     },
     {
-      "url": "/",
+      "url": "/admin/categories",
       "name": "Categories",
       "icon": "menu-icon tf-icons mdi mdi-shape-outline",
       "slug": "categories"
     },
     {
-      "url": "/",
+      "url": "/admin/articles",
       "name": "Articles",
       "icon": "menu-icon tf-icons mdi mdi-file-document-outline",
       "slug": "articles"
     },
     {
-      "url": "/",
+      "url": "/admin/testimonials",
       "name": "Testimonials",
       "icon": "menu-icon tf-icons mdi mdi-comment-quote-outline",
       "slug": "testimonials"
     },
     {
-      "url": "/",
+      "url": "/admin/clients",
       "name": "Clients",
       "icon": "menu-icon tf-icons mdi mdi-account-multiple-outline",
       "slug": "clients"

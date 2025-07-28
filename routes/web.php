@@ -43,6 +43,9 @@ use App\Http\Controllers\form_elements\InputGroups;
 use App\Http\Controllers\form_layouts\VerticalForm;
 use App\Http\Controllers\form_layouts\HorizontalForm;
 use App\Http\Controllers\tables\Basic as TablesBasic;
+use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ArticleController;
 
 // Main Page Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
@@ -107,3 +110,25 @@ Route::get('/form/layouts-horizontal', [HorizontalForm::class, 'index'])->name('
 
 // tables
 Route::get('/tables/basic', [TablesBasic::class, 'index'])->name('tables-basic');
+
+Route::prefix('admin')
+    ->name('admin.')
+    // ->middleware(['web', 'auth']) // Add 'auth' if you want login protection
+    ->group(function () {
+
+        Route::get('/', function () {
+            return redirect()->route('admin.dashboard');
+        });
+
+        // Dashboard
+        Route::view('/dashboard', 'admin.pages.dashboard')->name('dashboard');
+
+        // Courses CRUD
+        Route::resource('courses', CourseController::class);
+
+        // Categories CRUD
+        Route::resource('categories', CategoryController::class);
+
+        // Articles CRUD
+        Route::resource('articles', ArticleController::class);
+    });
