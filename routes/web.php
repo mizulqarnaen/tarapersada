@@ -46,6 +46,8 @@ use App\Http\Controllers\tables\Basic as TablesBasic;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\TestimonialController;
 
 // Main Page Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
@@ -131,4 +133,10 @@ Route::prefix('admin')
 
         // Articles CRUD
         Route::resource('articles', ArticleController::class);
+
+        // Testimonials CRUD
+        Route::resource('testimonials', TestimonialController::class);
+
+        // Clients CRUD
+        Route::resource('clients', ClientController::class);
     });
