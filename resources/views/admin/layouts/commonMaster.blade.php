@@ -23,6 +23,17 @@
 
   <!-- Include Scripts for customizer, helper, analytics, config -->
   @include('admin/layouts/sections/scriptsIncludes')
+
+  <script src="https://cdn.tiny.cloud/1/lkmsepcm1knozuc1m4hz87abz1tmqxlg2vzua3h22ytkk350/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    tinymce.init({
+      selector: '#description',
+      menubar: false,
+      plugins: 'lists link image preview code',
+      toolbar: 'undo redo | bold italic underline | bullist numlist | link image | preview code',
+      height: 300
+    });
+  </script>
 </head>
 
 <body>
