@@ -39,8 +39,8 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->string('thumbnail')->nullable();
-            $table->unsignedBigInteger('author_id')->nullable(); // FK to users table if you have one
             $table->string('tags')->nullable(); // Can store comma-separated tags or JSON
+            $table->foreignId('author_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
 

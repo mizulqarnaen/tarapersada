@@ -10,7 +10,7 @@
     <div class="card-body">
         <form action="{{ route('admin.courses.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <x-form-input name="title" label="Course Title" :value="old('title')" />
+            <x-form-input name="title" label="Course Title" :value="old('title')" required />
             <x-form-select name="category_id" label="Category" :options="$categories->pluck('title','id')" />
             <x-form-input name="price" label="Price" type="number" :value="old('price')" />
             <x-form-input name="stars" label="Stars" type="number" :value="old('stars')" />

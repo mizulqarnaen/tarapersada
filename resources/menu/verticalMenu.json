@@ -1,7 +1,7 @@
 {
   "menu": [
     {
-      "url": "/",
+      "url": "/admin/",
       "name": "Dashboards",
       "icon": "menu-icon tf-icons mdi mdi-home-outline",
       "slug": "dashboard"
@@ -46,25 +46,25 @@
       "name": "Company",
       "icon": "menu-icon tf-icons mdi mdi-domain",
       "slug": "company",
-      "url": "/"
+      "url": "/admin/company"
     },
     {
       "name": "Contacts",
       "icon": "menu-icon tf-icons mdi mdi-card-account-phone-outline",
       "slug": "contacts",
-      "url": "/"
+      "url": "/admin/contacts"
     },
     {
       "name": "Services",
       "icon": "menu-icon tf-icons mdi mdi-briefcase-outline",
       "slug": "services",
-      "url": "/"
+      "url": "/admin/services"
     },
     {
       "name": "Galleries",
       "icon": "menu-icon tf-icons mdi mdi-image-multiple-outline",
       "slug": "galleries",
-      "url": "/"
+      "url": "/admin/galleries"
     },
     {
       "menuHeader": "Admin"
@@ -73,7 +73,7 @@
       "name": "User Management",
       "icon": "menu-icon tf-icons mdi mdi-account-outline",
       "slug": "user-management",
-      "url": "/"
+      "url": "/admin/user-management"
     }
   ]
 }
