@@ -73,7 +73,7 @@
       "name": "User Management",
       "icon": "menu-icon tf-icons mdi mdi-account-outline",
       "slug": "user-management",
-      "url": "/admin/user-management"
+      "url": "/admin/users"
     }
   ]
 }
