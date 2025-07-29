@@ -26,9 +26,9 @@ class ServiceController extends Controller
         ]);
 
         Service::create([
-            'title' => $request->name,
+            'title' => $request->title,
             'description' => $request->description,
-            'icon' => $request->website_link,
+            'icon' => $request->icon,
         ]);
 
         return redirect()->route('admin.services.index')->with('success', 'Service created successfully.');
@@ -46,9 +46,9 @@ class ServiceController extends Controller
         ]);
 
         $service->update([
-            'title' => $request->name,
+            'title' => $request->title,
             'description' => $request->description,
-            'icon' => $request->website_link,
+            'icon' => $request->icon,
         ]);
 
         return redirect()->route('admin.services.index')->with('success', 'Service updated successfully.');
