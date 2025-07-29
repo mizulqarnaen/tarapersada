@@ -47,10 +47,16 @@ use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\UserController;
 
 // Main Page Route
-Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
+// Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
+Route::view('/', 'admin.pages.dashboard')->name('dashboard');
 
 // layout
 Route::get('/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layouts-without-menu');
@@ -139,4 +145,19 @@ Route::prefix('admin')
 
         // Clients CRUD
         Route::resource('clients', ClientController::class);
+
+        // Galleries CRUD
+        Route::resource('galleries', GalleryController::class);
+
+        // Services CRUD
+        Route::resource('services', ServiceController::class);
+
+        // Contacts CRUD
+        Route::resource('contacts', ContactController::class);
+
+        // Company CRUD
+        Route::resource('company', CompanyController::class);
+
+        // Users CRUD
+        Route::resource('users', UserController::class);
     });

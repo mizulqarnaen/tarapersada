@@ -4,62 +4,63 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $contacts = Contact::latest()->paginate(10);
+        return view('admin.pages.contacts.index', compact('contacts'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('admin.pages.contacts.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'value' => 'required|string|max:255',
+        ]);
+
+        Contact::create([
+            'name' => $request->name,
+            'value' => $request->value,
+            'type' => $request->type,
+            'link' => $request->link,
+        ]);
+
+        return redirect()->route('admin.contacts.index')->with('success', 'Contact created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function edit(Contact $contact)
     {
-        //
+        return view('admin.pages.contacts.edit', compact('contact'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update(Request $request, Contact $contact)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'value' => 'required|string|max:255',
+        ]);
+
+        $contact->update([
+            'name' => $request->name,
+            'value' => $request->value,
+            'type' => $request->type,
+            'link' => $request->link,
+        ]);
+
+        return redirect()->route('admin.contacts.index')->with('success', 'Contact updated successfully.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy(Contact $contact)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $contact->delete();
+        return redirect()->route('admin.contacts.index')->with('success', 'Contact deleted successfully.');
     }
 }
