@@ -36,7 +36,7 @@
                                 <a class="dropdown-item" href="{{ route('admin.contacts.edit', $contact->id) }}"><i class="mdi mdi-pencil-outline me-1"></i> Edit</a>
                                 <form action="{{ route('admin.contacts.destroy', $contact->id) }}" method="POST" style="display:inline-block;width:100%;">
                                     @csrf @method('DELETE')
-                                    <a type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item"><i class="mdi mdi-trash-can-outline me-1"></i> Delete</a>
+                                    <button type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item"><i class="mdi mdi-trash-can-outline me-1"></i> Delete</button>
                                 </form>
                             </div>
                         </div>

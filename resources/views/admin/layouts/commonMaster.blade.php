@@ -33,6 +33,13 @@
       toolbar: 'undo redo | bold italic underline | bullist numlist | link image | preview code',
       height: 300
     });
+    tinymce.init({
+      selector: '#about',
+      menubar: false,
+      plugins: 'lists link image preview code',
+      toolbar: 'undo redo | bold italic underline | bullist numlist | link image | preview code',
+      height: 300
+    });
   </script>
 </head>
 
