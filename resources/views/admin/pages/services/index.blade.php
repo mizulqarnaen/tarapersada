@@ -25,7 +25,7 @@
                 @foreach($services as $service)
                 <tr>
                     <td>{{ $service->title }}</td>
-                    <td>{{ $service->description }}</td>
+                    <td>{{ Str::limit(strip_tags($service->description), 100) }}</td>
                     <td><i class="{{ $service->icon }}"></i></td>
                     <td>
                         <div class="dropdown">

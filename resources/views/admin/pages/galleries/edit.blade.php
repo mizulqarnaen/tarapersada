@@ -27,6 +27,7 @@
                     <option value="legality" {{ $gallery->type == 'legality' ? 'selected' : '' }}>legality</option>
                     <option value="schedule" {{ $gallery->type == 'schedule' ? 'selected' : '' }}>schedule</option>
                     <option value="documentation" {{ $gallery->type == 'documentation' ? 'selected' : '' }}>documentation</option>
+                    <option value="marketing" {{ $gallery->type == 'marketing' ? 'selected' : '' }}>marketing</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>

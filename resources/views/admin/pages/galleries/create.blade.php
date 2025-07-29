@@ -21,6 +21,7 @@
                     <option value="legality">legality</option>
                     <option value="schedule">schedule</option>
                     <option value="documentation">documentation</option>
+                    <option value="marketing">marketing</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>

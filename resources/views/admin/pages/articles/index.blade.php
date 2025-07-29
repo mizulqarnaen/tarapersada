@@ -25,7 +25,7 @@
                 @foreach($articles as $article)
                 <tr>
                     <td>{{ $article->title }}</td>
-                    <td>{{ $article->description }}</td>
+                    <td>{{ Str::limit(strip_tags($article->description), 100) }}</td>
                     <td>{{ $article->user->name }}</td>
                     <td>
                         <div class="dropdown">

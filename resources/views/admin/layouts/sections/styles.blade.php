@@ -25,3 +25,4 @@
         width: 50px; height: 50px; border-radius: 10px; object-fit: cover;
     }
 </style>
+<script src="https://kit.fontawesome.com/4670674644.js" crossorigin="anonymous"></script>
