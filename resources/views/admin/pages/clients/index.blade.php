@@ -1,12 +1,12 @@
 @extends('admin/layouts/contentNavbarLayout')
 
-@section('title', 'Articles')
+@section('title', 'Clients')
 
 @section('content')
 <div class="card">
     <div class="card-header d-flex justify-content-between">
-        <h5>Articles</h5>
-        <a href="{{ route('admin.articles.create') }}" class="btn btn-primary">+ Add Article</a>
+        <h5>Clients</h5>
+        <a href="{{ route('admin.clients.create') }}" class="btn btn-primary">+ Add Client</a>
     </div>
     <div class="table-responsive text-nowrap">
         @if(session('success'))
@@ -22,17 +22,17 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($articles as $article)
+                @foreach($clients as $client)
                 <tr>
-                    <td>{{ $article->title }}</td>
-                    <td>{{ $article->description }}</td>
-                    <td>{{ $article->user->name }}</td>
+                    <td><img src="{{ asset('storage/' . $client->logo) }}" class="thumbnail-img"></td>
+                    <td>{{ $client->name }}</td>
+                    <td>{{ $client->website_link }}</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('admin.articles.edit', $article->id) }}"><i class="mdi mdi-pencil-outline me-1"></i> Edit</a>
-                                <form action="{{ route('admin.articles.destroy', $article->id) }}" method="POST" style="display:inline-block;width:100%;">
+                                <a class="dropdown-item" href="{{ route('admin.clients.edit', $client->id) }}"><i class="mdi mdi-pencil-outline me-1"></i> Edit</a>
+                                <form action="{{ route('admin.clients.destroy', $client->id) }}" method="POST" style="display:inline-block;width:100%;">
                                     @csrf @method('DELETE')
                                     <a type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item"><i class="mdi mdi-trash-can-outline me-1"></i> Delete</a>
                                 </form>
@@ -44,7 +44,7 @@
             </tbody>
         </table><br>
         <div class="d-flex justify-content-center">
-            {{ $articles->links() }}
+            {{ $clients->links() }}
         </div>
     </div>
 </div>

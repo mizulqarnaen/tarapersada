@@ -19,3 +19,9 @@
 
 <!-- Page Styles -->
 @yield('page-style')
+
+<style>
+    .thumbnail-img {
+        width: 50px; height: 50px; border-radius: 10px; object-fit: cover;
+    }
+</style>
