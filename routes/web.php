@@ -53,10 +53,10 @@ use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Frontend\PageController;
 
 // Main Page Route
-// Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
-Route::view('/', 'admin.pages.dashboard')->name('dashboard');
+Route::get('/', [PageController::class, 'index'])->name('index');
 
 // layout
 Route::get('/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layouts-without-menu');
