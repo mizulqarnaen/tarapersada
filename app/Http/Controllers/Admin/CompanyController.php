@@ -20,7 +20,7 @@ class CompanyController extends Controller
             'name' => 'required|string|max:255',
         ]);
 
-        $imagePath = null;
+        $imagePath = $company->image;
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('company', 'public');
         }
