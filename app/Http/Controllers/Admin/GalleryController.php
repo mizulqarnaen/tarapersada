@@ -61,7 +61,6 @@ class GalleryController extends Controller
         $gallery->update([
             'name' => $request->name,
             'image' => $imagePath,
-            'type' => $request->type,
             'caption' => $request->caption,
         ]);
 

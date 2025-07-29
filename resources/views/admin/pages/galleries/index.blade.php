@@ -1,12 +1,12 @@
 @extends('admin/layouts/contentNavbarLayout')
 
-@section('title', 'Clients')
+@section('title', 'Galleries')
 
 @section('content')
 <div class="card">
     <div class="card-header d-flex justify-content-between">
-        <h5>Clients</h5>
-        <a href="{{ route('admin.clients.create') }}" class="btn btn-primary">+ Add Client</a>
+        <h5>Galleries</h5>
+        <a href="{{ route('admin.galleries.create') }}" class="btn btn-primary">+ Add Gallery</a>
     </div>
     <div class="table-responsive text-nowrap">
         @if(session('success'))
@@ -15,24 +15,24 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>Logo</th>
+                    <th>Image</th>
                     <th>Name</th>
-                    <th>Website</th>
+                    <th>Type</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($clients as $client)
+                @foreach($galleries as $gallery)
                 <tr>
-                    <td><img src="{{ asset('storage/' . $client->logo) }}" class="thumbnail-img"></td>
-                    <td>{{ $client->name }}</td>
-                    <td>{{ $client->website_link }}</td>
+                    <td><img src="{{ asset('storage/' . $gallery->image) }}" class="thumbnail-img"></td>
+                    <td>{{ $gallery->name }}</td>
+                    <td>{{ $gallery->type }}</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('admin.clients.edit', $client->id) }}"><i class="mdi mdi-pencil-outline me-1"></i> Edit</a>
-                                <form action="{{ route('admin.clients.destroy', $client->id) }}" method="POST" style="display:inline-block;width:100%;">
+                                <a class="dropdown-item" href="{{ route('admin.galleries.edit', $gallery->id) }}"><i class="mdi mdi-pencil-outline me-1"></i> Edit</a>
+                                <form action="{{ route('admin.galleries.destroy', $gallery->id) }}" method="POST" style="display:inline-block;width:100%;">
                                     @csrf @method('DELETE')
                                     <a type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item"><i class="mdi mdi-trash-can-outline me-1"></i> Delete</a>
                                 </form>
@@ -44,7 +44,7 @@
             </tbody>
         </table><br>
         <div class="d-flex justify-content-center">
-            {{ $clients->links() }}
+            {{ $galleries->links() }}
         </div>
     </div>
 </div>
