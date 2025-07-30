@@ -32,4 +32,19 @@ class PageController extends Controller
             compact('company', 'categories', 'articles', 'services', 'logo', 'whatsapps', 'phone', 'socialLinks', 'clients', 'marketings')
         );
     }
+
+    public function aboutUs()
+    {
+        $company = Information::get()->first();
+        $categories = Category::all();
+        $articles = Article::all()->take(3);
+        $services = Service::all();
+        $logo = Gallery::where('type', 'logo')->first();
+        $legalities = Gallery::where('type', 'legality')->get();
+        $whatsapps = Contact::where('type', 'whatsapp')->get();
+        $phone = Contact::where('type', 'phone')->first();
+        $socialLinks = Contact::whereIn('type', ['facebook', 'instagram', 'linkedin', 'website'])->get();
+
+        return view('frontend.pages.about-us', compact('logo', 'whatsapps', 'phone', 'socialLinks', 'company', 'articles', 'categories', 'services', 'legalities'));
+    }
 }

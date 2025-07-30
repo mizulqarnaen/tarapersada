@@ -25,41 +25,34 @@
         <div class="navbar-wrapper tf_clearfix">
             <nav id="main-nav-wrap" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
             <ul id="main-nav" class="main-nav tf_clearfix tf_box">
-                <li class="current-menu-item menu-item-page-235 current_page_item menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-261">
-                <a href="index.html">Home</a>
+                <li class="{{ Route::currentRouteName() == 'index' ? 'current_page_item' : '' }} menu-item-page-235 menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-261">
+                <a href="{{ route('index') }}">Home</a>
                 </li>
-                <li class="menu-item-page-232 menu-item menu-item-type-post_type menu-item-object-page menu-item-260">
-                <a href="about-us/index.html">About Us</a>
+                <li class="{{ Route::currentRouteName() == 'about-us' ? 'current_page_item' : '' }} menu-item-page-232 menu-item menu-item-type-post_type menu-item-object-page menu-item-260">
+                <a href="{{ route('about-us') }}">About Us</a>
                 </li>
                 <li class="menu-item-custom-444 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-sub-menu menu-item-444" aria-haspopup="true">
                 <a href="#daftartraining">Daftar Training <span class="child-arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @foreach ($categories as $category)
                     <li class="menu-item-page-234 menu-item menu-item-type-post_type menu-item-object-page menu-item-445 menu-page-234-parent-444">
-                    <a href="training-baraya/index.html">Training Baraya</a>
+                        <a href="">{{ $category->title }}</a>
                     </li>
-                    <li class="menu-item-page-240 menu-item menu-item-type-post_type menu-item-object-page menu-item-257 menu-page-240-parent-444">
-                    <a href="training-sertifikasi-bnsp/index.html">Training &amp; Sertifikasi BNSP</a>
-                    </li>
-                    <li class="menu-item-page-241 menu-item menu-item-type-post_type menu-item-object-page menu-item-256 menu-page-241-parent-444">
-                    <a href="training-sertifikasi-kemnaker-ri/index.html">Training &amp; Sertifikasi KEMNAKER RI</a>
-                    </li>
-                    <li class="menu-item-page-242 menu-item menu-item-type-post_type menu-item-object-page menu-item-255 menu-page-242-parent-444">
-                    <a href="perpanjangan-sertifikat-bnsp/index.html">Perpanjangan Sertifikat BNSP</a>
-                    </li>
+                    @endforeach
                 </ul>
                 </li>
                 <li class="menu-item-page-447 menu-item menu-item-type-post_type menu-item-object-page menu-item-452">
-                <a href="schedule/index.html">Schedule</a>
+                <a href="{{ route('schedules') }}">Schedule</a>
                 </li>
                 <li class="menu-item-page-446 menu-item menu-item-type-post_type menu-item-object-page menu-item-451">
-                <a href="dokumentasi-testimoni/index.html">Dokumentasi &amp; Testimoni</a>
+                <a href="{{ route('testimonials') }}">Dokumentasi &amp; Testimoni</a>
                 </li>
                 <li class="menu-item-page-233 menu-item menu-item-type-post_type menu-item-object-page menu-item-259">
-                <a href="artikel/index.html">Artikel</a>
+                <a href="{{ route('articles') }}">Artikel</a>
                 </li>
                 <li class="menu-item-page-243 menu-item menu-item-type-post_type menu-item-object-page menu-item-254">
-                <a href="kontak/index.html">Kontak</a>
+                <a href="{{ route('contacts') }}">Kontak</a>
                 </li>
             </ul>
             </nav>
