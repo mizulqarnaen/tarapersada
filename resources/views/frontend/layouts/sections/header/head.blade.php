@@ -934,7 +934,7 @@
 <link fetchpriority="high" id="themify_concate-css" rel="stylesheet" href="{{ asset('assets/css/themify/themify.min.css') }}" />
 
 @if (Route::current()->getName() == 'about-us')
-  <link rel="preload" fetchpriority="high" href="{{ asset('assets/css/themify/themify-834399603.min.css') }}" as="style" />
-  <link fetchpriority="high" id="themify_concate-css" rel="stylesheet" href="{{ asset('assets/css/themify/themify-834399603.min.css') }}" />
+  {{-- <link rel="preload" fetchpriority="high" href="{{ asset('assets/css/themify/themify-834399603.min.css') }}" as="style" />
+  <link fetchpriority="high" id="themify_concate-css" rel="stylesheet" href="{{ asset('assets/css/themify/themify-834399603.min.css') }}" /> --}}
 @endif
 <script src="https://kit.fontawesome.com/4670674644.js" crossorigin="anonymous"></script>
